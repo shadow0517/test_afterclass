@@ -20,6 +20,7 @@ static data_store_list_node *node_find(data_store_list *ds_list, char *word)
 {
 	data_store_list_node *node_temp;
 
+	/*字符串比较，一般先比较字符串长度，然后使用strncmp函数*/
 	for (node_temp = ds_list->head->next; node_temp; node_temp = node_temp->next)
 		if (!strcmp(word, node_temp->obj->word))
 			return node_temp;
